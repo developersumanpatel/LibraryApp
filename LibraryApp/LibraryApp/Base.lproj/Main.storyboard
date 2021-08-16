@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cge-cg-0aj" customClass="RoundCornerView" customModule="LibraryApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cge-cg-0aj" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="10" width="394" height="228"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0gD-B2-DZH">
@@ -59,7 +59,7 @@
                                                                 </stackView>
                                                             </subviews>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgP-7D-Udf" customClass="RoundCornerView" customModule="LibraryApp" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgP-7D-Udf" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
                                                             <rect key="frame" x="20" y="20" width="48.5" height="26.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzf-lq-mvM">
@@ -82,7 +82,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFv-fQ-9m8" customClass="RoundCornerView" customModule="LibraryApp" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFv-fQ-9m8" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
                                                             <rect key="frame" x="346" y="19.5" width="28" height="28"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZX-kh-GWc">
@@ -106,12 +106,12 @@
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <integer key="value" value="14"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="0gD-B2-DZH" firstAttribute="leading" secondItem="Cge-cg-0aj" secondAttribute="leading" constant="10" id="C9a-NV-Ufx"/>
                                                         <constraint firstAttribute="trailing" secondItem="jFv-fQ-9m8" secondAttribute="trailing" constant="20" id="PkU-SQ-bDF"/>
@@ -224,8 +224,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XUd-9K-TYl">
                                                     <rect key="frame" x="10" y="10" width="394" height="135"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="2cq-zo-Ctq" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2cq-zo-Ctq" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="1" width="100" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="NQ0-wc-gGb"/>
                                                                 <constraint firstAttribute="height" constant="130" id="PtF-Zu-Mte"/>
@@ -337,8 +337,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Lv8-b3-Jyc" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="10" width="100" height="130"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Lv8-b3-Jyc" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="11" width="100" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="9kW-tB-56n"/>
                                                                 <constraint firstAttribute="height" constant="130" id="A4X-m3-yje"/>
@@ -524,8 +524,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h5z-ET-FQa">
                                                     <rect key="frame" x="10" y="10" width="394" height="135"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="shh-yD-xMM" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="shh-yD-xMM" customClass="ShadowView" customModule="LibraryApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="1" width="100" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="cbu-nU-64g"/>
                                                                 <constraint firstAttribute="height" constant="130" id="gag-eN-bzC"/>
@@ -670,25 +670,22 @@
     </scenes>
     <designables>
         <designable name="2cq-zo-Ctq">
-            <size key="intrinsicContentSize" width="250" height="373"/>
+            <size key="intrinsicContentSize" width="22.5" height="20"/>
         </designable>
         <designable name="Lv8-b3-Jyc">
-            <size key="intrinsicContentSize" width="250" height="373"/>
+            <size key="intrinsicContentSize" width="22.5" height="20"/>
         </designable>
         <designable name="shh-yD-xMM">
-            <size key="intrinsicContentSize" width="250" height="373"/>
+            <size key="intrinsicContentSize" width="22.5" height="20"/>
         </designable>
     </designables>
     <resources>
-        <image name="bookPlaceholder" width="250" height="373"/>
+        <image name="book" catalog="system" width="128" height="102"/>
         <image name="britishLibrary" width="1019" height="522"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

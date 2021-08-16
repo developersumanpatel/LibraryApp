@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PassKit
 
 class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -35,15 +36,31 @@ class CartViewController: UIViewController {
         self.noBooksLabel.isHidden = ((books?.count ?? 0) != 0)
         self.bottomView.isHidden = ((books?.count ?? 0) == 0)
         self.tableView.reloadData()
-        
+        totalValueLabel.text = "\(getTotal())"
+    }
+    
+    private func getTotal() -> Double {
         var total: Double = 0.0
         for book in books ?? [] {
             total += Double(book.cartQuantity ?? 0) * (book.price ?? 0.0)
         }
-        totalValueLabel.text = "\(total)"
+        return total
     }
     
     @IBAction func checkoutClicked(_ sender: Any) {
+        let request = PKPaymentRequest()
+        request.merchantIdentifier = "<merchant id>"
+        request.supportedNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
+        request.merchantCapabilities = PKMerchantCapability.capability3DS
+        request.countryCode = "US"
+        request.currencyCode = "USD"
+        
+        request.paymentSummaryItems = [
+            PKPaymentSummaryItem(label: "Books", amount: NSDecimalNumber(value: getTotal()))
+        ]
+        
+        let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
+        self.present(applePayController!, animated: true, completion: nil)
     }
 }
 
@@ -87,5 +104,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension CartViewController: PKPaymentAuthorizationViewControllerDelegate {
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        completion(PKPaymentAuthorizationResult(status: PKPaymentAuthorizationStatus.success, errors: []))
     }
 }

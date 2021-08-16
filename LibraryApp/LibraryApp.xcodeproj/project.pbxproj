@@ -172,8 +172,8 @@
 		70C0162E26C6666200CD21EA /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				70C0162F26C6667C00CD21EA /* CartViewController.swift */,
 				70C0163126C666BD00CD21EA /* CartCell.swift */,
+				70C0162F26C6667C00CD21EA /* CartViewController.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";

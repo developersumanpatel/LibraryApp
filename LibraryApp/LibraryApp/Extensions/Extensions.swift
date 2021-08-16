@@ -31,16 +31,6 @@ class ShadowView: UIImageView {
     }
 }
 
-class RoundCornerView: UIView {
-    @IBInspectable var cornerRadius: CGFloat = 8
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.layer.shadowOpacity = 1.0
-        self.layer.cornerRadius = cornerRadius
-        self.layer.masksToBounds = true
-    }
-}
-
 extension UIImageView {
     func setImageFrom(from url: URL) {
         URLSession.shared.dataTask(with: url) { data, response, error in
